@@ -32,7 +32,7 @@ async fn main() -> std::io::Result<()>{
         App::new()
             .wrap(Logger::default())
             .service(
-            fs::Files::new("/views",path.to_str().unwrap() )
+            fs::Files::new("/",path.to_str().unwrap() )
                 .show_files_listing()
                 .index_file("index.html")
                 .use_last_modified(true),
